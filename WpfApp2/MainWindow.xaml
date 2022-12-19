@@ -1,0 +1,96 @@
+﻿<Window x:Class="WpfApp2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp2" d:DataContext= "{d:DesignInstance Type=local:MainWindow_VM}"
+        mc:Ignorable="d"
+        Title="Главное" Height="600" Width="1300" Style="{DynamicResource WindowStyle}">
+    <Grid>
+
+        <Frame
+            x:Name="MainFrame"
+            NavigationUIVisibility="Hidden" Margin="241,58,10,59" Height="450" Width="1000"/>
+        <StackPanel HorizontalAlignment="Left" Width="241">
+
+            <Button
+                Style="{DynamicResource ButtonStyle}"
+                x:Name="btn1"
+                Width="180"
+                Height="30"
+                Margin="0 20 0 0"
+                Content="Все книги"
+                Command="{Binding SearchBooks}" 
+                FontWeight="Bold"/>
+            <Button
+                Style="{DynamicResource ButtonStyle}"
+                x:Name="btn2"
+                Width="180"
+                Height="30"
+                Margin="0 20 0 0"
+                Content="Поиск по автору"
+                FontWeight="Bold"
+                Command ="{Binding Author}"/>
+            <Button
+                Style="{DynamicResource ButtonStyle}"
+                x:Name="btn3"
+                Width="180"
+                Height="30"
+                Margin="0 20 0 0"
+                Content="Поиск по артикулу"
+                Command="{Binding ArtikulSearch}"
+                 FontWeight="Bold"/>
+            <Button
+                Style="{DynamicResource ButtonStyle}"
+                x:Name="btn4"
+                Width="180"
+                Height="30"
+                Margin="0 20 0 0"
+                Content="Поиск по языку"
+                Command="{Binding SearchLanguage}"
+                 FontWeight="Bold"/>
+            <Button
+                Style="{DynamicResource ButtonStyle}"
+                x:Name="btn5"
+                Width="180"
+                Height="30"
+                Margin="0 20 0 0"
+                Content="Поиск по типу данных"
+                Command="{Binding SearchMIMEtype}"
+                FontWeight="Bold"/>
+            <Button
+                Style="{DynamicResource ButtonStyle}"
+                x:Name="btn6"
+                Width="180"
+                Height="30"
+                Margin="0 20 0 0"
+                Content="Поиск по названиям"
+                Command="{Binding SearchName}"
+                FontWeight="Bold"/>
+            <Button
+                Style="{DynamicResource ButtonStyle}"
+                x:Name="btn7"
+                Width="180"
+                Height="30"
+                Margin="0 20 0 0"
+                Content="Поиск по теме"
+                Command="{Binding SearchTheme}"
+                FontWeight="Bold"/>
+            <Button
+                Style="{DynamicResource ButtonStyle}"
+                x:Name="btn8"
+                Width="180"
+                Height="30"
+                Margin="0 20 0 0"
+                Content="Поиск по авторскому праву"
+                Command="{Binding SearchCopyright}"
+                FontWeight="Bold"/>
+            <ComboBox x:Name="styleBox"
+                Background="FloralWhite"             
+                Width="180"
+                Height="30"
+                Margin="0 20 0 0"
+                 FontWeight="Bold"/>
+        </StackPanel>
+    </Grid>
+</Window>

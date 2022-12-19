@@ -1,0 +1,35 @@
+﻿<Page x:Class="WpfApp2.Pages.Author"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp2.Pages" xmlns:vm="clr-namespace:WpfApp2.VM" d:DataContext="{d:DesignInstance Type=vm:Author_VM}"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="1000"
+      Title="Author">
+
+    <Grid>
+        <TextBox Margin="10,62,611,0" TextWrapping="Wrap" Text="{Binding Searchstart}" VerticalAlignment="Top" Height="17"/>
+        <TextBox Margin="394,62,232,0" TextWrapping="Wrap" Text="{Binding Searchend}" VerticalAlignment="Top" Height="17"/>
+        
+        <ListBox  Margin="10,84,10,10" ItemsSource="{Binding Persons}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Name}"
+                                   Style="{DynamicResource TextBlockStyle}"/>
+                        <TextBlock Text="{Binding BirthYear}"
+                                   Style="{DynamicResource TextBlockStyle}"/>
+                        <TextBlock Text="{Binding DeathYear}"
+                                   Style="{DynamicResource TextBlockStyle}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Button Margin="773,51,10,371"
+                Style="{DynamicResource ButtonStyle}"
+                Content="Поиск"
+                Command="{Binding FindAuthoryears}"
+                FontWeight="Bold"/>
+    </Grid>
+</Page>

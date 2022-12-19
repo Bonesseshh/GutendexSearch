@@ -1,0 +1,49 @@
+﻿<Page x:Class="WpfApp2.Pages.ArtikulSearch"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp2.Pages" xmlns:vm="clr-namespace:WpfApp2.VM" d:DataContext="{d:DesignInstance Type=vm:ArtikulSearch_VM}"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="1000"
+      Title="ArtikulSearch">
+
+    <Grid>
+        <Button Margin="10,28,740,394"
+                Content="Сортировать по возрастанию"
+                Command="{Binding Ascending}"
+                FontWeight="Bold"
+                Style="{DynamicResource ButtonStyle}"/>
+        <Button Margin="265,28,484,394"
+                Content="Сортировать по убыванию"
+                Command="{Binding Descending}"
+                FontWeight="Bold"
+                Style="{DynamicResource ButtonStyle}"/>
+        <Button Margin="521,28,232,394"
+                Content="Сортировать по популярности"
+                Command="{Binding Popular}"
+                FontWeight="Bold"
+                Style="{DynamicResource ButtonStyle}"/>
+
+        <TextBox Margin="10,61,232,0" TextWrapping="Wrap" Text="{Binding Search}" VerticalAlignment="Top"/>
+        
+        <ListBox Margin="10,84,10,10" ItemsSource="{Binding Books}"  >
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Id}"
+                                   Style="{DynamicResource TextBlockStyle}"/>
+                        <TextBlock Text="{Binding Title}"
+                                   Style="{DynamicResource TextBlockStyle}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Button Margin="773,51,10,371"
+                Style="{DynamicResource ButtonStyle}"
+                Content="Поиск"
+                Command="{Binding Artikulsearch }"
+                FontWeight="Bold"/>
+    </Grid>
+
+</Page>
