@@ -1,20 +1,11 @@
-﻿using Newtonsoft.Json.Linq;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
-using WpfApp2.Model;
+﻿using WpfApp2.Model;
 using WpfApp2.Pages;
 using WpfApp2.VM;
 
 namespace WpfApp2
 {
     public class MainWindow_VM : Helper
-    {
-        
+    {       
         private RelayCommand _allbooks;
         private RelayCommand _author;
         private RelayCommand _artikul;
@@ -65,8 +56,6 @@ namespace WpfApp2
             {
                 Service.frame.Navigate(new SearchCopyright());
             }));
-
-    }
-       
+    }      
 }
 

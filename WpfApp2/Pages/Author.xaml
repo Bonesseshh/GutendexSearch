@@ -11,8 +11,8 @@
     <Grid>
         <TextBox Margin="10,62,611,0" TextWrapping="Wrap" Text="{Binding Searchstart}" VerticalAlignment="Top" Height="17"/>
         <TextBox Margin="394,62,232,0" TextWrapping="Wrap" Text="{Binding Searchend}" VerticalAlignment="Top" Height="17"/>
-        
-        <ListBox  Margin="10,84,10,10" ItemsSource="{Binding Persons}">
+
+        <ListBox  Margin="10,84,10,10" ItemsSource="{Binding Persons}" Style="{DynamicResource ListBoxStyle}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>

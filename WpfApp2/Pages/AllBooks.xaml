@@ -25,8 +25,8 @@
                 Command="{Binding Popular}"
                 FontWeight="Bold"
                 Style="{DynamicResource ButtonStyle}"/>
-              
-        <ListBox ItemsSource="{Binding Books}" Margin="10,84,10,10" >
+
+        <ListBox ItemsSource="{Binding Books}" Margin="10,84,10,10" Style="{DynamicResource ListBoxStyle}" >
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
@@ -39,7 +39,7 @@
         </ListBox>
         <Button Margin="773,51,10,371"
                 Style="{DynamicResource ButtonStyle}"
-                Content="Поиск"
+                Content="Показать"
                 Command="{Binding AllBooksSearch }"
                 FontWeight="Bold"/>
     </Grid>

@@ -21,36 +21,39 @@ namespace WpfApp2.VM
         public RelayCommand FindAuthoryears => _authoryears ??
             (_authoryears = new RelayCommand((x) =>
             {
-               Persons.Clear();
-                GutendexMethods cm = new GutendexMethods();
-                JObject json = cm.SearchYearAuthor(Searchstart, Searchend);
-                var name = " ";
-                var date_start = " ";
-                var date_end = " ";
-                var nameJs =
-                from c in json["results"]
-                where c["authors"][0]["birth_year"] != null 
-                select new
+                try
                 {
-                    name = (string)c["authors"][0]["name"],
-                    date_start = (string)c["authors"][0]["birth_year"],
-                    date_end = (string)c["authors"][0]["death_year"]
+                    Persons.Clear();
+                    GutendexMethods cm = new GutendexMethods();
+                    JObject json = cm.SearchYearAuthor(Searchstart, Searchend);                  
+                    var nameJs =
+                    from c in json["results"]
+                    where c["authors"][0]["birth_year"] != null
+                    select new
+                    {
+                        name = (string)c["authors"][0]["name"],
+                        date_start = (string)c["authors"][0]["birth_year"],
+                        date_end = (string)c["authors"][0]["death_year"]
 
-                };
-                foreach (var c in nameJs)
-                {
-                   
+                    };
+                    foreach (var c in nameJs)
+                    {
+
                         Persons.Add(new Person()
                         {
                             Name = c.name,
                             BirthYear = c.date_start,
                             DeathYear = c.date_end
 
-                        });                    
+                        });
+                    }
+                    OnPropertyChanged();
                 }
-                OnPropertyChanged();
-            }));
+                catch (Exception)
+                {
 
+                }              
+            }));
         public int Searchstart
         {
             get => _searchstart;
@@ -68,8 +71,6 @@ namespace WpfApp2.VM
                 _searchend = value;
                 OnPropertyChanged();
             }
-        }
-        
-        
+        }              
     }
 }

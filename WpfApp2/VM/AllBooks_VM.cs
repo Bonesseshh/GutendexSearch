@@ -38,102 +38,123 @@ namespace WpfApp2.VM
                 Sorted("descending");
             }));
         void Sorted(string sort)
-        {
-            if(sort == "none")
+        {                  
+            if (sort == "none")
             {
-                Books.Clear();
-                GutendexMethods cm = new GutendexMethods();
-                JObject json = cm.AllBooks();
-                var title = " ";
-
-                var nameJs =
-                from c in json["results"]
-                select new
+                try
                 {
-                    title = (string)c["title"]
-
-                };
-                foreach (var c in nameJs)
-                {
-                    Books.Add(new Book()
+                    Books.Clear();
+                    GutendexMethods cm = new GutendexMethods();
+                    JObject json = cm.AllBooks();
+                    var nameJs =
+                    from c in json["results"]
+                    select new
                     {
-                        Title = c.title
+                        title = (string)c["title"]
 
-                    });
+                    };
+                    foreach (var c in nameJs)
+                    {
+                        Books.Add(new Book()
+                        {
+                            Title = c.title
+
+                        });
+                    }
+                    OnPropertyChanged();
                 }
-                OnPropertyChanged();
+                catch (Exception)
+                {
+                  
+                }                    
             }
+                                
             else if(sort == "popular")
             {
-                Books.Clear();
-                GutendexMethods cm = new GutendexMethods();
-                JObject json = cm.Sort(sort);
-                var title = " ";
-
-                var nameJs =
-                from c in json["results"]               
-                select new
+                try
                 {
-                    title = (string)c["title"]
-
-                };
-                foreach (var c in nameJs)
-                {
-                    Books.Add(new Book()
+                    Books.Clear();
+                    GutendexMethods cm = new GutendexMethods();
+                    JObject json = cm.Sort(sort);
+                    var nameJs =
+                    from c in json["results"]
+                    select new
                     {
-                        Title = c.title
+                        title = (string)c["title"]
 
-                    });
+                    };
+                    foreach (var c in nameJs)
+                    {
+                        Books.Add(new Book()
+                        {
+                            Title = c.title
+
+                        });
+                    }
+                    OnPropertyChanged();
                 }
-                OnPropertyChanged();
+                catch (Exception)
+                {
+                 
+                }               
             }
             else if(sort == "ascending")
             {
-                Books.Clear();
-                GutendexMethods cm = new GutendexMethods();
-                JObject json = cm.Sort(sort);
-                var title = " ";
-
-                var nameJs =
-                from c in json["results"]
-                select new
+                try
                 {
-                    title = (string)c["title"]
-
-                };
-                foreach (var c in nameJs)
-                {
-                    Books.Add(new Book()
+                    Books.Clear();
+                    GutendexMethods cm = new GutendexMethods();
+                    JObject json = cm.Sort(sort);
+                    var nameJs =
+                    from c in json["results"]
+                    select new
                     {
-                        Title = c.title
+                        title = (string)c["title"]
 
-                    });
+                    };
+                    foreach (var c in nameJs)
+                    {
+                        Books.Add(new Book()
+                        {
+                            Title = c.title
+
+                        });
+                    }
+                    OnPropertyChanged();
                 }
-                OnPropertyChanged();
+                catch (Exception)
+                {
+
+                }               
             }
             else if(sort == "descending")
             {
-                Books.Clear();
-                GutendexMethods cm = new GutendexMethods();
-                JObject json = cm.Sort(sort);
-                var title = " ";
-
-                var nameJs =
-                from c in json["results"]
-                select new
+                try
                 {
-                    title = (string)c["title"]
-
-                };
-                foreach (var c in nameJs)
-                {
-                    Books.Add(new Book()
+                    Books.Clear();
+                    GutendexMethods cm = new GutendexMethods();
+                    JObject json = cm.Sort(sort);
+                    var nameJs =
+                    from c in json["results"]
+                    select new
                     {
-                        Title = c.title
+                        title = (string)c["title"]
 
-                    });
+                    };
+                    foreach (var c in nameJs)
+                    {
+                        Books.Add(new Book()
+                        {
+                            Title = c.title
+
+                        });
+                    }
+                    OnPropertyChanged();
                 }
-                OnPropertyChanged();
+                catch (Exception)
+                {
+
+                }             
             }
         }
     }   

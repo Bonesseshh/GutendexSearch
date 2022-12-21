@@ -55,10 +55,7 @@ namespace WpfApp2.VM
                 {
                     Books.Clear();
                     GutendexMethods cm = new GutendexMethods();
-                    JObject json = cm.MIMEtype(Search);
-                    var id = 0;
-                    var title = " ";
-                    var media_type = " ";
+                    JObject json = cm.MIMEtype(Search);                    
                     var nameJs =
                     from c in json["results"]
                     select new
@@ -81,7 +78,7 @@ namespace WpfApp2.VM
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Вы ввели некорректные данные!");
+                    
                 }
             }
             else if (sort == "popular")
@@ -90,10 +87,7 @@ namespace WpfApp2.VM
                 {
                     Books.Clear();
                     GutendexMethods cm = new GutendexMethods();
-                    JObject json = cm.Sort(sort);
-                    var id = 0;
-                    var title = " ";
-                    var media_type = " ";
+                    JObject json = cm.Sort(sort);                    
                     var nameJs =
                     from c in json["results"]
                     select new
@@ -117,7 +111,7 @@ namespace WpfApp2.VM
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Вы ввели некорректные данные!");
+                    
                 }
 
             }
@@ -127,10 +121,7 @@ namespace WpfApp2.VM
                 {
                     Books.Clear();
                     GutendexMethods cm = new GutendexMethods();
-                    JObject json = cm.Sort(sort);
-                    var id = 0;
-                    var title = " ";
-                    var media_type = " ";
+                    JObject json = cm.Sort(sort);                 
                     var nameJs =
                     from c in json["results"]
                     select new
@@ -154,7 +145,7 @@ namespace WpfApp2.VM
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Вы ввели некорректные данные!");
+                   
                 }
             }
             else if (sort == "descending")
@@ -163,10 +154,7 @@ namespace WpfApp2.VM
                 {
                     Books.Clear();
                     GutendexMethods cm = new GutendexMethods();
-                    JObject json = cm.Sort(sort);
-                    var id = 0;
-                    var title = " ";
-                    var media_type = " ";
+                    JObject json = cm.Sort(sort);                 
                     var nameJs =
                     from c in json["results"]
                     select new
@@ -190,7 +178,7 @@ namespace WpfApp2.VM
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Вы ввели некорректные данные!");
+                    
                 }
             }
         }

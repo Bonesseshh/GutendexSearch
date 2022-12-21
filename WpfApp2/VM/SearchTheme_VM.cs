@@ -5,7 +5,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows;
+
 using WpfApp2.Model;
 
 namespace WpfApp2.VM
@@ -29,10 +29,10 @@ namespace WpfApp2.VM
             }
         }
         public RelayCommand ThemeSearch => _themesearch ??
-            (_themesearch = new RelayCommand((x) =>
-            {
-                Sorted("none");
-            }));
+        (_themesearch = new RelayCommand((x) =>
+        {
+            Sorted("none");
+        }));
         public RelayCommand Popular => _sortpopular ??
         (_sortpopular = new RelayCommand((x) =>
         {
@@ -56,10 +56,7 @@ namespace WpfApp2.VM
                 GutendexMethods cm = new GutendexMethods();
                 try
                 {                   
-                    JObject json = cm.Theme(Search);
-                    var id = 0;
-                    var title = " ";
-                    var bookshelves = " ";
+                    JObject json = cm.Theme(Search);                   
                     var nameJs =
                     from c in json["results"]
                     select new
@@ -80,7 +77,6 @@ namespace WpfApp2.VM
                                 Id = c.id,
                                 Title = c.title,
                                 Bookshelves = booksh
-
                             });
                         }
                     }
@@ -88,9 +84,8 @@ namespace WpfApp2.VM
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Вы ввели некорректные данные!");
+                   
                 }
-
             }
             else if (sort == "popular")
             {
@@ -98,10 +93,7 @@ namespace WpfApp2.VM
                 {
                     Books.Clear();
                     GutendexMethods cm = new GutendexMethods();
-                    JObject json = cm.Theme(Search);
-                    var id = 0;
-                    var title = " ";
-                    var bookshelves = " ";
+                    JObject json = cm.Sort(sort);                 
                     var nameJs =
                     from c in json["results"]
                     select new
@@ -122,7 +114,6 @@ namespace WpfApp2.VM
                                 Id = c.id,
                                 Title = c.title,
                                 Bookshelves = booksh
-
                             });
                         }
                     }
@@ -130,7 +121,7 @@ namespace WpfApp2.VM
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Вы ввели некорректные данные!");
+                    
                 }
             }
             else if (sort == "ascending")
@@ -139,10 +130,7 @@ namespace WpfApp2.VM
                 {
                     Books.Clear();
                     GutendexMethods cm = new GutendexMethods();
-                    JObject json = cm.Theme(Search);
-                    var id = 0;
-                    var title = " ";
-                    var bookshelves = " ";
+                    JObject json = cm.Sort(sort);                   
                     var nameJs =
                     from c in json["results"]
                     select new
@@ -163,7 +151,6 @@ namespace WpfApp2.VM
                                 Id = c.id,
                                 Title = c.title,
                                 Bookshelves = booksh
-
                             });
                         }
                     }
@@ -171,7 +158,7 @@ namespace WpfApp2.VM
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Вы ввели некорректные данные!");
+                   
                 }
             }
             else if (sort == "descending")
@@ -180,10 +167,7 @@ namespace WpfApp2.VM
                 {
                     Books.Clear();
                     GutendexMethods cm = new GutendexMethods();
-                    JObject json = cm.Theme(Search);
-                    var id = 0;
-                    var title = " ";
-                    var bookshelves = " ";
+                    JObject json = cm.Sort(sort);                  
                     var nameJs =
                     from c in json["results"]
                     select new
@@ -204,7 +188,6 @@ namespace WpfApp2.VM
                                 Id = c.id,
                                 Title = c.title,
                                 Bookshelves = booksh
-
                             });
                         }
                     }
@@ -212,7 +195,7 @@ namespace WpfApp2.VM
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Вы ввели некорректные данные!");
+                    
                 }
             }
         }         

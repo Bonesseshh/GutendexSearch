@@ -26,8 +26,8 @@
                 Style="{DynamicResource ButtonStyle}"/>
 
         <TextBox Margin="10,61,232,0" TextWrapping="Wrap" Text="{Binding Search}" VerticalAlignment="Top"/>
-        
-        <ListBox Margin="10,84,10,10" ItemsSource="{Binding Books}"  >
+
+        <ListBox Margin="10,84,10,10" ItemsSource="{Binding Books}" Style="{DynamicResource ListBoxStyle}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>

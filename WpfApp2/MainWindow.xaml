@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp2" d:DataContext= "{d:DesignInstance Type=local:MainWindow_VM}"
         mc:Ignorable="d"
-        Title="Главное" Height="600" Width="1300" Style="{DynamicResource WindowStyle}">
+        Title="Главное" Height="600" Width="1280" Style="{DynamicResource WindowStyle}">
     <Grid>
 
         <Frame
@@ -16,7 +16,7 @@
             <Button
                 Style="{DynamicResource ButtonStyle}"
                 x:Name="btn1"
-                Width="180"
+                Width="190"
                 Height="30"
                 Margin="0 20 0 0"
                 Content="Все книги"
@@ -25,16 +25,16 @@
             <Button
                 Style="{DynamicResource ButtonStyle}"
                 x:Name="btn2"
-                Width="180"
+                Width="190"
                 Height="30"
                 Margin="0 20 0 0"
-                Content="Поиск по автору"
+                Content="Поиск по годам жизни автора"
                 FontWeight="Bold"
                 Command ="{Binding Author}"/>
             <Button
                 Style="{DynamicResource ButtonStyle}"
                 x:Name="btn3"
-                Width="180"
+                Width="190"
                 Height="30"
                 Margin="0 20 0 0"
                 Content="Поиск по артикулу"
@@ -43,7 +43,7 @@
             <Button
                 Style="{DynamicResource ButtonStyle}"
                 x:Name="btn4"
-                Width="180"
+                Width="190"
                 Height="30"
                 Margin="0 20 0 0"
                 Content="Поиск по языку"
@@ -52,7 +52,7 @@
             <Button
                 Style="{DynamicResource ButtonStyle}"
                 x:Name="btn5"
-                Width="180"
+                Width="190"
                 Height="30"
                 Margin="0 20 0 0"
                 Content="Поиск по типу данных"
@@ -61,16 +61,16 @@
             <Button
                 Style="{DynamicResource ButtonStyle}"
                 x:Name="btn6"
-                Width="180"
+                Width="190"
                 Height="30"
                 Margin="0 20 0 0"
-                Content="Поиск по названиям"
+                Content="Поиск по названиям и именам"
                 Command="{Binding SearchName}"
                 FontWeight="Bold"/>
             <Button
                 Style="{DynamicResource ButtonStyle}"
                 x:Name="btn7"
-                Width="180"
+                Width="190"
                 Height="30"
                 Margin="0 20 0 0"
                 Content="Поиск по теме"
@@ -79,7 +79,7 @@
             <Button
                 Style="{DynamicResource ButtonStyle}"
                 x:Name="btn8"
-                Width="180"
+                Width="190"
                 Height="30"
                 Margin="0 20 0 0"
                 Content="Поиск по авторскому праву"
@@ -87,7 +87,7 @@
                 FontWeight="Bold"/>
             <ComboBox x:Name="styleBox"
                 Background="FloralWhite"             
-                Width="180"
+                Width="190"
                 Height="30"
                 Margin="0 20 0 0"
                  FontWeight="Bold"/>

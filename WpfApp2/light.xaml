@@ -12,4 +12,9 @@
         <Setter Property="Foreground" Value="Black" />
         <Setter Property="BorderBrush" Value="Gray" />
     </Style>
+    <Style x:Key="ListBoxStyle" TargetType="ListBox">
+        <Setter Property="Background" Value="White" />
+        <Setter Property="Foreground" Value="Black" />
+        <Setter Property="BorderBrush" Value="Gray"/>
+    </Style>
 </ResourceDictionary>
