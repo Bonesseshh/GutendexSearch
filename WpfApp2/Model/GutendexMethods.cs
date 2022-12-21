@@ -61,6 +61,10 @@ namespace WpfApp2.Model
             string url = $"https://gutendex.com/books?sort={sorting}";
             return _gutsession.query(url);
         }
+        public bool jopa(int s = 1)
+        {
+            return false;
+        }
 
     }
 }

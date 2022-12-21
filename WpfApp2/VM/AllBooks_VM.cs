@@ -37,7 +37,7 @@ namespace WpfApp2.VM
             {
                 Sorted("descending");
             }));
-        void Sorted(string sort)
+        public void Sorted(string sort)
         {                  
             if (sort == "none")
             {
